@@ -5,7 +5,7 @@ const Header = () => {
     <>
       <header className='d-flex justify-content-between align-items-center bg-light text-white'>
         <a className="d-flex flex-wrap align-items-center justify-content-center m-2" >
-          <img src="logo4.png" width="180px" height="55px" />
+          <img src="logo.png" width="180px" height="55px" />
         </a>
         <ul className="nav col-12 col-md-auto mx-5 px-3 justify-content-center text-dark mb-md-0">
           <li><a to="/" className="nav-link p-3 link-dark ">Home</a></li>
