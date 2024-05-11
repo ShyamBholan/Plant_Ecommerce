@@ -3,65 +3,82 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-      {/* <div className="container-fluid bg-secondary">
-        <footer className="py-5 mt-4">
-          <div className="row">
-            <div className="col-2">
-              <h5>Section</h5>
-              <ul className="nav flex-column">
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Home</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">About</a></li>
-              </ul>
-            </div>
-
-            <div className="col-2">
-              <h5>Section</h5>
-              <ul className="nav flex-column">
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Home</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">About</a></li>
-              </ul>
-            </div>
-
-            <div className="col-2">
-              <h5>Section</h5>
-              <ul className="nav flex-column">
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Home</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
-                <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">About</a></li>
-              </ul>
-            </div>
-
-            <div className="col-4 offset-1">
-              <form>
-                <h5>Subscribe to our newsletter</h5>
-                <p>Monthly digest of whats new and exciting from us.</p>
-                <div className="d-flex w-100 gap-2">
-                  <label for="newsletter1" className="visually-hidden">Email address</label>
-                  <input id="newsletter1" type="text" className="form-control" placeholder="Email address" />
-                  <button className="btn btn-primary" type="button">Subscribe</button>
-                </div>
-              </form>
-            </div>
+      <footer className="text-center text-lg-start bg-body-tertiary my-2">
+        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-secondary">
+          <div className="me-5 d-lg-block">
+            <span>Get connected with us on social networks:</span>
+          </div>
+          <div>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-google"></i>
+            </a>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-github"></i>
+            </a>
           </div>
 
-          <div className="d-flex justify-content-between py-4 my-4 border-top">
-            <p>&copy; 2021 Company, Inc. All rights reserved.</p>
-            <ul className="list-unstyled d-flex">
-              <li className="ms-3"><a className="link-dark" href="#"></a></li>
-              <li className="ms-3"><a className="link-dark" href="#"></a></li>
-              <li className="ms-3"><a className="link-dark" href="#"></a></li>
-            </ul>
+        </section>
+
+        <div className="container text-center text-md-start">
+          <div className="row justify-content-space mt-3">
+            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <a className="d-flex flex-wrap align-items-center justify-content-center m-2" >
+                <img src="logo.png" width="180px" height="55px" />
+              </a>
+              <p>
+              At Mero Plants, we're passionate about green living. Our mission is to provide premium quality indoor and outdoor plants, enhancing your living spaces with natural beauty
+              </p>
+            </div>
+
+            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 className="text-uppercase fw-bold mb-4">Products</h6>
+              <p><a href="#" className="text-reset text-decoration-none">Angular</a></p>
+              <p><a href="#" className="text-reset text-decoration-none">React</a></p>
+              <p><a href="#" className="text-reset text-decoration-none">Vue</a></p>
+              <p><a href="#" className="text-reset text-decoration-none">Laravel</a></p>
+            </div>
+
+            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
+              <p><a href="#" className="text-reset text-decoration-none">Pricing</a></p>
+              <p><a href="#" className="text-reset text-decoration-none">Settings</a></p>
+              <p><a href="#" className="text-reset text-decoration-none">Orders</a></p>
+              <p><a href="#" className="text-reset text-decoration-none">Help</a></p>
+            </div>
+
+            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i className="fas fa-home me-3"></i>Banepa, Kavre</p>
+              <p>
+                <i className="fas fa-envelope me-3"></i>
+                info@gmail.com
+              </p>
+              <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
+              <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
+            </div>
+
           </div>
-        </footer>
-      </div> */}
+
+        </div>
+        <div className="text-center text-dark bg-light p-4">
+          © 2024 Copyright:
+          <a className="text-reset text-decoration-none fw-bold" href="#">Mero Plants</a>
+        </div>
+
+      </footer>
+
     </>
   )
 }
