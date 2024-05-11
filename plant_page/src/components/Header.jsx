@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <>
-      <header className='d-flex justify-content-between align-items-center bg-light text-white'>
+      <header className='d-flex justify-content-between align-items-center bg-light border-bottom border-secondary'>
         <a className="d-flex flex-wrap align-items-center justify-content-center m-2" >
           <img src="logo.png" width="180px" height="55px" />
         </a>
@@ -16,9 +16,9 @@ const Header = () => {
           <li><a to="#" className="nav-link p-3 link-dark">Cart</a></li>
         </ul>
 
-        <div class="input-group mx-5">
-          <input type="text" class="form-control" placeholder="Search"/>
-          <button class="btn btn-outline-secondary" type="button" id="button"><i className="fas fa-search"></i></button>
+        <div className="input-group mx-5">
+          <input type="text" className="form-control" placeholder="Search"/>
+          <button className="btn btn-outline-secondary" type="button" id="button"><i className="fas fa-search"></i></button>
         </div>
 
         <div className=" col-md-2 text-end ">
