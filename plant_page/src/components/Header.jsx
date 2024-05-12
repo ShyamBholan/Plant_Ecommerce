@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <>
-      <header className='d-flex justify-content-between align-items-center bg-light border-bottom border-secondary'>
+      <header className='d-flex justify-content-between align-items-center bg-light'>
         <a className="d-flex flex-wrap align-items-center justify-content-center m-2" >
           <img src="logo.png" width="180px" height="55px" />
         </a>
