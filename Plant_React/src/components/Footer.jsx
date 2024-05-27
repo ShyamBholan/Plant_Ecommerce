@@ -64,16 +64,16 @@ const Footer = () => {
 
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-            <p><a href="#" className="text-reset text-decoration-none">Angular</a></p>
-            <p><a href="#" className="text-reset text-decoration-none">React</a></p>
-            <p><a href="#" className="text-reset text-decoration-none">Vue</a></p>
-            <p><a href="#" className="text-reset text-decoration-none">Laravel</a></p>
+            <p><a href="#" className="text-reset text-decoration-none">Money Plant</a></p>
+            <p><a href="#" className="text-reset text-decoration-none">Lucky Bamboo</a></p>
+            <p><a href="#" className="text-reset text-decoration-none">Peace Lily</a></p>
+            <p><a href="#" className="text-reset text-decoration-none">Snake Plant</a></p>
           </div>
 
           <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
             <p><a href="#" className="text-reset text-decoration-none">Pricing</a></p>
-            <p><a href="#" className="text-reset text-decoration-none">Settings</a></p>
+            <p><a href="#" className="text-reset text-decoration-none">Products</a></p>
             <p><a href="#" className="text-reset text-decoration-none">Orders</a></p>
             <p><a href="#" className="text-reset text-decoration-none">Help</a></p>
           </div>
@@ -85,8 +85,8 @@ const Footer = () => {
               <i className="fas fa-envelope me-3"></i>
               info@gmail.com
             </p>
-            <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
+            <p><i className="fas fa-phone me-3"></i> + 977 9841001234</p>
+            <p><i className="fas fa-print me-3"></i> + 977 9809876543</p>
           </div>
         </div>
       </div>
