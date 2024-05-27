@@ -22,9 +22,17 @@ exports.postCategory = async (req, res) => {
         })
         .catch(err => res.status(400).json({ error: err }))
 }
-//to retrive all datas
+//to retrive all datas or category list
 exports.categoryList=async(req,res)=>{
     const category=await Category.find()
+    if(!category){
+        return res.status(400).json({error:'something went wrong'})
+    }
+    res.send(category)
+}
+//category datils 
+exports.categoryDetails=async(req,res)=>{
+    const category=await Category.findById(req.params.id)
     if(!category){
         return res.status(400).json({error:'something went wrong'})
     }
