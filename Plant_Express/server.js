@@ -4,13 +4,17 @@ require('dotenv').config()
 const morgan=require('morgan')
 require('./db/connection')
 const bodyParser=require('body-parser')
+const cors=require('cors')
 
 const categoryRoute=require('./routes/categoryRoute')
-const productRoute = require('./routes/productRoute')
+const productRoute=require('./routes/productRoute')
 
 //middleware
 app.use(morgan('dev'))
 app.use(bodyParser.json())
+
+//to read json data
+app.use('/public/uploads',express.static('public/uploads'))
 
 //routes
 app.use('/api',categoryRoute)

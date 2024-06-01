@@ -1,9 +1,11 @@
 const express=require('express')
 
-const{ postProduct }=require('../controllers/productController')
+const{ postProduct, productList }=require('../controllers/productController')
 
 const router=express.Router()
+const upload=require('../middleware/fileUpload')
 
-router.post('/postproduct',postProduct)
+router.post('/postproduct',upload.single('product_image'),postProduct)
+router.get('/productlist',productList)
 
-module.exports=router()
+module.exports=router
