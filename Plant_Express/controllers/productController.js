@@ -1,6 +1,7 @@
-const Product = require('../models/productModel')
+const Product = require('../models/productModel');
+const fs = require('fs');
 
-//to insert products
+// To insert products
 exports.postProduct = async (req, res) => {
     let product = new Product({
         product_name: req.body.product_name,
@@ -8,61 +9,74 @@ exports.postProduct = async (req, res) => {
         countInStock: req.body.countInStock,
         product_description: req.body.product_description,
         product_image: req.file.path,
-        product_rating:req.body.product_rating,
+        product_rating: req.body.product_rating,
         category: req.body.category
-    })
-    product = await product.save()
+    });
+    product = await product.save();
     if (!product) {
-        return res.status(400).json({ error: 'something went wrong' })
+        return res.status(400).json({ error: 'Something went wrong' });
     }
-    res.send(product)
-}
-//to show all the products
+    res.send(product);
+};
+
+// To show all the products
 exports.productList = async (req, res) => {
-    const product = await Product.find()
-    if (!product) {
-        return res.status(400).json({ error: 'something went wrong' })
+    const products = await Product.find();
+    if (!products) {
+        return res.status(400).json({ error: 'Something went wrong' });
     }
-    res.send(product)
-}
-//productdetails
+    res.send(products);
+};
+
+// Product details
 exports.productDetails = async (req, res) => {
-    const product = await Product.findById(req.params.id).populate('category', 'category_name')
+    const product = await Product.findById(req.params.id).populate('category', 'category_name');
     if (!product) {
-        return res.status(400).json({ error: 'something went wrong' })
+        return res.status(400).json({ error: 'Something went wrong' });
     }
-    res.send(product)
-}
-//updateproduct
+    res.send(product);
+};
+
+// Update product
 exports.updateProduct = async (req, res) => {
-    const product = await Product.findByIdAndUpdate(req.params.id,
-        {
-            product_name: req.body.product_name,
-            product_price: req.body.product_price,
-            countInStock: req.body.countInStock,
-            product_description: req.body.product_description,
-            product_image: req.body.product_image,
-            product_rating:req.body.product_rating,
-            category: req.body.category
-        }, { new: true }
-    )
+    const product = await Product.findById(req.params.id);
     if (!product) {
-        return res.status(400).json({ error: 'something went wrong' })
+        return res.status(404).json({ error: 'Product not found' });
     }
-    res.send(product)
-}
-//deleteproduct
-exports.deleteProduct=async(req,res)=>{
-    const product=await Product.findByIdAndDelete(req.params.id)
-    .then(product=>{
-        if (!product){
-            return res.status(403).json({error:'product didnot found'})
+
+    if (req.file) {
+        // Delete the old image if a new one is uploaded
+        if (product.product_image && fs.existsSync(product.product_image)) {
+            fs.unlinkSync(product.product_image);
         }
-        else{
-            return res.status(200).json({message:'product deleted'})
-        }
-    })
-    .catch(err=>{
-        return res.status(400).json({error:err})
-    })
-}
+        product.product_image = req.file.path;
+    }
+
+    product.product_name = req.body.product_name || product.product_name;
+    product.product_price = req.body.product_price || product.product_price;
+    product.countInStock = req.body.countInStock || product.countInStock;
+    product.product_description = req.body.product_description || product.product_description;
+    product.product_rating = req.body.product_rating || product.product_rating;
+    product.category = req.body.category || product.category;
+
+    const updatedProduct = await product.save();
+    if (!updatedProduct) {
+        return res.status(400).json({ error: 'Something went wrong' });
+    }
+    res.send(updatedProduct);
+};
+
+// Delete product
+exports.deleteProduct = async (req, res) => {
+    const product = await Product.findByIdAndDelete(req.params.id);
+    if (!product) {
+        return res.status(403).json({ error: 'Product not found' });
+    }
+
+    // Delete the product image from the server
+    if (product.product_image && fs.existsSync(product.product_image)) {
+        fs.unlinkSync(product.product_image);
+    }
+
+    res.status(200).json({ message: 'Product deleted' });
+};
