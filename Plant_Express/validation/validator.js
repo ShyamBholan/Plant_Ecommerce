@@ -1,4 +1,5 @@
 const { check, validationResult } = require('express-validator')
+const multer=require('multer')
 
 exports.categoryValidation = [
     check('category_name', 'category is required').notEmpty().isAlpha().isLength({ min: 3 }).withMessage('category must be atleast 3 characters')
