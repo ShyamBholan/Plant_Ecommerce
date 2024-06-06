@@ -68,15 +68,20 @@ exports.updateProduct = async (req, res) => {
 
 // Delete product
 exports.deleteProduct = async (req, res) => {
-    const product = await Product.findByIdAndDelete(req.params.id);
-    if (!product) {
-        return res.status(403).json({ error: 'Product not found' });
-    }
+    Product.findByIdAndDelete(req.params.id)
+        .then(product => {
+            if (!product) {
+                return res.status(403).json({ error: 'Product not found' });
+            }
 
-    // Delete the product image from the server
-    if (product.product_image && fs.existsSync(product.product_image)) {
-        fs.unlinkSync(product.product_image);
-    }
+            // Delete the product image from the server
+            if (product.product_image && fs.existsSync(product.product_image)) {
+                fs.unlinkSync(product.product_image);
+            }
 
-    res.status(200).json({ message: 'Product deleted' });
+            return res.status(200).json({ message: 'Product deleted' });
+        })
+        .catch(err => {
+            return res.status(400).json({ error: err.message });
+        });
 };
