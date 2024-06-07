@@ -9,9 +9,7 @@ const Footer = () => {
     useEffect(() => {
       const interval = setInterval(() => {
         setCurrentYear(new Date().getFullYear());
-      }, 1000); // Update every second
-
-      // Clear the interval when the component unmounts
+      }, 1000); 
       return () => clearInterval(interval);
     }, []);
     
@@ -90,8 +88,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Render the Copyright component */}
       <Copyright />
     </footer>
   );
