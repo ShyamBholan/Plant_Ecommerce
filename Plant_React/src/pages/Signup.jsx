@@ -6,7 +6,7 @@ const Signup = () => {
         <div className="col-lg-3 my-4">
             <form className="p-3 shadow-lg">
                 <h2 className="text-center text-success my-2">
-                    Register Form
+                    Register Here
                 </h2>
                 <div className="mb-3">
                     <label htmlFor="fname">FullName</label>
