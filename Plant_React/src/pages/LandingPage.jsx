@@ -11,8 +11,8 @@ const LandingPage = () => {
               <p className='display-7'>Plants reduce stress and improve your mood,<br />
                 So, they are ideal for use at home <br /> and in workplace </p>
               <div className="d-flex align-items-center  my-3">
-              <Link to="/signup" className="btn btn-success me-3" role="button">Start with Us</Link>
-                <button id="button" className='btn btn-light border border-shadow-dark p-2 m-3'>Explore More <i className="fa fa-arrow-right"></i></button>
+                <Link to="/signup" className="btn btn-success me-3" role="button">Start with Us</Link>
+                <Link to="/*" id="button" className='btn btn-light border border-shadow-dark p-2 m-3'>Explore More <i className="fa fa-arrow-right"></i></Link>
               </div>
             </div>
           </div>

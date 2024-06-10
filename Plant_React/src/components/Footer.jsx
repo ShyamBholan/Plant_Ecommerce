@@ -1,25 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  function Copyright() {
-    // State variable to store the current year
-    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-  
-    // Effect to update the current year
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentYear(new Date().getFullYear());
-      }, 1000); 
-      return () => clearInterval(interval);
-    }, []);
-    
-    return (
-      <div className="text-center text-dark border-top border-shadow-secondary bg-light p-4">
-        © <span>{currentYear}</span> Copyright:
-        <a className="text-reset text-decoration-none fw-bold" href="#">Mero Plants</a>
-      </div>
-    );
-  }
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="text-center text-lg-start bg-body-tertiary my-2 border-top border-shadow-secondary bg-light">
@@ -28,67 +15,67 @@ const Footer = () => {
           <span>Get connected with us on social networks:</span>
         </div>
         <div>
-          <a href="" className="me-4 text-reset">
+          <Link to="#" className="me-4 text-reset" aria-label="Facebook">
             <i className="fab fa-facebook-f"></i>
-          </a>
-          <a href="" className="me-4 text-reset">
+          </Link>
+          <Link to="#" className="me-4 text-reset" aria-label="Twitter">
             <i className="fab fa-twitter"></i>
-          </a>
-          <a href="" className="me-4 text-reset">
+          </Link>
+          <Link to="#" className="me-4 text-reset" aria-label="Google">
             <i className="fab fa-google"></i>
-          </a>
-          <a href="" className="me-4 text-reset">
+          </Link>
+          <Link to="#" className="me-4 text-reset" aria-label="Instagram">
             <i className="fab fa-instagram"></i>
-          </a>
-          <a href="" className="me-4 text-reset">
+          </Link>
+          <Link to="#" className="me-4 text-reset" aria-label="LinkedIn">
             <i className="fab fa-linkedin"></i>
-          </a>
-          <a href="" className="me-4 text-reset">
+          </Link>
+          <Link to="#" className="me-4 text-reset" aria-label="GitHub">
             <i className="fab fa-github"></i>
-          </a>
+          </Link>
         </div>
       </section>
 
       <div className="container text-center text-md-start">
         <div className="row justify-content-space mt-3">
           <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <a className="d-flex flex-wrap align-items-center justify-content-center m-2" >
-              <img src="logo.png" width="180px" height="55px" />
+            <a className="d-flex flex-wrap align-items-center justify-content-center m-2">
+              <img src="logo.png" alt="Mero Plants Logo" width="180px" height="55px" />
             </a>
             <p>
-              At Mero Plants, we're passionate about green living. Our mission is to provide premium quality indoor and outdoor plants, enhancing your living spaces with natural beauty
+              At Mero Plants, we're passionate about green living. Our mission is to provide premium quality indoor and outdoor plants, enhancing your living spaces with natural beauty.
             </p>
           </div>
 
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-            <p><a href="#" className="text-reset text-decoration-none">Money Plant</a></p>
-            <p><a href="#" className="text-reset text-decoration-none">Lucky Bamboo</a></p>
-            <p><a href="#" className="text-reset text-decoration-none">Peace Lily</a></p>
-            <p><a href="#" className="text-reset text-decoration-none">Snake Plant</a></p>
+            <p><Link to="#" className="text-reset text-decoration-none">Money Plant</Link></p>
+            <p><Link to="#" className="text-reset text-decoration-none">Lucky Bamboo</Link></p>
+            <p><Link to="#" className="text-reset text-decoration-none">Peace Lily</Link></p>
+            <p><Link to="#" className="text-reset text-decoration-none">Snake Plant</Link></p>
           </div>
 
           <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
-            <p><a href="#" className="text-reset text-decoration-none">Pricing</a></p>
-            <p><a href="#" className="text-reset text-decoration-none">Products</a></p>
-            <p><a href="#" className="text-reset text-decoration-none">Orders</a></p>
-            <p><a href="#" className="text-reset text-decoration-none">Help</a></p>
+            <p><Link to="#" className="text-reset text-decoration-none">Services</Link></p>
+            <p><Link to="#" className="text-reset text-decoration-none">Products</Link></p>
+            <p><Link to="#" className="text-reset text-decoration-none">Orders</Link></p>
+            <p><Link to="#" className="text-reset text-decoration-none">Help</Link></p>
           </div>
 
           <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i className="fas fa-home me-3"></i>Banepa, Kavre</p>
-            <p>
-              <i className="fas fa-envelope me-3"></i>
-              info@gmail.com
-            </p>
+            <p><i className="fas fa-home me-3"></i>Kathmandu, Nepal</p>
+            <p><i className="fas fa-envelope me-3"></i>info@gmail.com</p>
             <p><i className="fas fa-phone me-3"></i> + 977 9841001234</p>
             <p><i className="fas fa-print me-3"></i> + 977 9809876543</p>
           </div>
         </div>
       </div>
-      <Copyright />
+      <div className="text-center text-dark border-top border-shadow-secondary bg-light p-4">
+        © {currentYear} Copyright:
+        <Link className="text-reset text-decoration-none fw-bold" to="/">Mero Plants</Link>
+      </div>
     </footer>
   );
 }
