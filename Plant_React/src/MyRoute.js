@@ -5,8 +5,8 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import NotFound from './pages/NotFound'
 import Homepage from './pages/Homepage'
-import Product from './components/Product'
 import AboutUs from './pages/AboutUs'
+import Card from './components/Card'
 
 const MyRoute = () => {
   return (
@@ -15,7 +15,7 @@ const MyRoute = () => {
         <Routes>
             <Route path='/' element={<Layouts/>}>
             <Route index element={<Homepage/>}/>
-            <Route path='product' element={<Product/>}/>
+            <Route path='product' element={<Card/>}/>
             <Route path='aboutus' element={<AboutUs/>} />
             <Route path='login' element={<Login/>}/>
             <Route path='signup' element={<Signup/>}/>
