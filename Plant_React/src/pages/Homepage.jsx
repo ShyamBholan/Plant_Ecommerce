@@ -10,7 +10,7 @@ const Homepage = () => {
     <LandingPage/>
     <Card/>
     <AboutUs/>
-    {/* <Carousel/> */}
+    <Carousel/>
     </>
   )
 }
