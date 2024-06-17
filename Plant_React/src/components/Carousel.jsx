@@ -3,7 +3,6 @@ import React from 'react';
 const Carousel = () => {
     return (
         <>
-            <h1 className='text-center mt-5 mb-4'>Decorate Your Homes</h1>
             <div className="w-100 mb-3 d-flex justify-content-center">
                 <div className='w-50 bg-primary'>
                     <div id="carouselExampleIndicators" className="carousel slide" style={{ maxWidth: '100%' }}>
@@ -20,13 +19,13 @@ const Carousel = () => {
                         </div>
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img src="images/g1.webp" className="d-block w-100" alt="Decor Image 1" style={{ maxHeight: '400px', objectFit: 'cover' }} />
+                                <img src="images/carousel-img-1.jpg" className="d-block w-100" alt="room with plants decore" style={{ maxHeight: '400px', objectFit: 'cover' }} />
                             </div>
                             <div className="carousel-item">
-                                <img src="images/g1.jpg" className="d-block w-100" alt="Decor Image 2" style={{ maxHeight: '400px', objectFit: 'cover' }} />
+                                <img src="images/carousel-img-2.jpg" className="d-block w-100" alt="boy reading books with plants on table" style={{ maxHeight: '400px', objectFit: 'cover' }} />
                             </div>
                             <div className="carousel-item">
-                                <img src="images/c1.jpg" className="d-block w-100" alt="Decor Image 3" style={{ maxHeight: '400px', objectFit: 'cover' }} />
+                                <img src="images/carousel-img-3.jpg" className="d-block w-100" alt="lady caring plants" style={{ maxHeight: '400px', objectFit: 'cover' }} />
                             </div>
                         </div>
                         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

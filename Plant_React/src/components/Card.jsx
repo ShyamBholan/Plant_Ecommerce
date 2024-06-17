@@ -3,12 +3,11 @@ import React from 'react';
 const Card = () => {
     return (
         <>
-        <h1 className='text-lg-center my-4'>Top Products</h1>
             <div className="container-fluid m-2">
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card">
-                            <img className="card-img-top" src="images/moneyplant.png" alt="Card image cap" />
+                            <img className="card-img-top" src="images/moneyplant.png" alt="money plant in a pot" />
                             <div className="card-body">
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -18,7 +17,7 @@ const Card = () => {
                     </div>
                     <div className="col-md-4">
                         <div className="card">
-                            <img className="card-img-top" src="images/peacelily.png" alt="Card image cap" />
+                            <img className="card-img-top" src="images/peacelily.png" alt="peacelily growing with flower" />
                             <div className="card-body">
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -28,7 +27,7 @@ const Card = () => {
                     </div>
                     <div className="col-md-4">
                         <div className="card">
-                            <img className="card-img-top" src="images/plant.png" alt="Card image cap" />
+                            <img className="card-img-top" src="images/plant.png" alt="plants growing green in a pot" />
                             <div className="card-body">
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
