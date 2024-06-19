@@ -21,12 +21,19 @@ exports.postProduct = async (req, res) => {
 
 // To show all the products
 exports.productList = async (req, res) => {
-    const products = await Product.find();
-    if (!products) {
-        return res.status(400).json({ error: 'Something went wrong' });
-    }
-    res.send(products);
+    Product.find()
+        .then(products => {
+            if (products.length === 0) {
+                return res.status(404).json({ message: 'No products found' });
+            }
+            res.json(products);
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(500).json({ error: 'Server error' });
+        });
 };
+
 
 // Product details
 exports.productDetails = async (req, res) => {

@@ -2,8 +2,9 @@ const { check, validationResult } = require('express-validator')
 const multer=require('multer')
 
 exports.categoryValidation = [
-    check('category_name', 'category is required').notEmpty().isAlpha().isLength({ min: 3 }).withMessage('category must be atleast 3 characters')
-]
+    check('category_name', 'category is required').notEmpty().withMessage('category is required'),
+    check('category_name', 'category must be atleast 3 characters').isLength({ min: 3 })
+];
 
 exports.productValidation = [
     check('product_name', 'product name is required').notEmpty().isLength({ min: 4 }).withMessage('product name mus be of 4 characters'),
