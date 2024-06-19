@@ -6,7 +6,7 @@ const Card = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-4">
-                        <div className="card">
+                        <div className="card shadow-lg p-3 mb-5 bg-white rounded">
                             <img className="card-img-top" src="images/moneyplant.png" alt="money plant in a pot" />
                             <div className="card-body">
                                 <h5 className="card-title">Card title</h5>
@@ -15,7 +15,7 @@ const Card = () => {
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="card">
+                        <div className="card shadow-lg p-3 mb-5 bg-white rounded">
                             <img className="card-img-top" src="images/peacelily.png" alt="peacelily growing with flower" />
                             <div className="card-body">
                                 <h5 className="card-title">Card title</h5>
@@ -24,7 +24,7 @@ const Card = () => {
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="card">
+                        <div className="card shadow-lg p-3 mb-5 bg-white rounded">
                             <img className="card-img-top" src="images/plant.png" alt="plants growing green in a pot" />
                             <div className="card-body">
                                 <h5 className="card-title">Card title</h5>
