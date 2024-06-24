@@ -14,7 +14,7 @@ const fs=require('fs')
  //.jpg
   cb(null,filename+'_'+Date.now()+ext) } })
    let imageFilter=(req,file,cb)=>{
-     if(!file.originalname.match(/\.(jpg|png|jpeg|svg|jfif|gif|JPG|PNG|JPEG|SVG|JFIF|GIF|avif)$/))
+     if(!file.originalname.match(/\.(jpg|png|jpeg|svg|jfif|gif|JPG|PNG|JPEG|SVG|JFIF|GIF|avif|webp)$/))
      { 
         return cb(new Error('You can upload image file only'),false) 
     }
