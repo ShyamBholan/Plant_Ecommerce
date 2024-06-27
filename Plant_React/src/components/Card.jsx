@@ -1,40 +1,26 @@
 import React from 'react';
+import { IMG_URL } from '../config';
 
-const Card = () => {
+const Card = ({ data }) => {
+    // Ensure data is defined before destructuring
+    if (!data) {
+        return null; // or return loading indicator or error message
+    }
+
+    // Destructure properties with default values to prevent errors
+    const { _id = '', product_name = '', product_price = 0, product_description = '', product_image = '' } = data;
+
     return (
-        <>
-            <div className="container-fluid mt-3">
-                <div className="row">
-                    <div className="col-md-4">
-                        <div className="card shadow-lg p-3 mb-5 bg-white rounded">
-                            <img className="card-img-top" src="images/moneyplant.png" alt="money plant in a pot" />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="card shadow-lg p-3 mb-5 bg-white rounded">
-                            <img className="card-img-top" src="images/peacelily.png" alt="peacelily growing with flower" />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="card shadow-lg p-3 mb-5 bg-white rounded">
-                            <img className="card-img-top" src="images/plant.png" alt="plants growing green in a pot" />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                            </div>
-                        </div>
-                    </div>
+        <div className="col-md-4">
+            <div className="card shadow-lg p-3 mb-5 bg-white rounded">
+                <img className="card-img-top" src={`${IMG_URL}/${product_image}`} alt={product_name} />
+                <div className="card-body">
+                    <h5 className="card-title">{product_name}</h5>
+                    <h5 className="card-title">Rs.{product_price}</h5>
+                    <p className="card-text">{product_description}</p>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
