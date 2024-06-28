@@ -11,6 +11,13 @@ const Products = () => {
             })
             .catch(err => console.log(err))
     }, [])
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error.message}</p>;
+    }
     return (
         <>
             <div className='container-fluid'>
