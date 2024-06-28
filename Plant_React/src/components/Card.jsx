@@ -3,7 +3,7 @@ import { IMG_URL } from '../config'
 import { Link } from 'react-router-dom'
 
 const Card = (props) => {
-  const{_id,product_name,product_description,product_price,product_image}=props.data
+  const { _id, product_name, product_description, product_price, product_image, product_rating } = props.data
   return (
     <>
       <div className="col">
@@ -12,6 +12,7 @@ const Card = (props) => {
           <div className="card-body">
             <h5 className="card-title">{product_name}</h5>
             <h5>Rs.{product_price}</h5>
+            <h5>Ratings:{product_rating}</h5>
             <Link to={`/productdetails/${_id}`} className='btn btn-success'>View Details</Link>
           </div>
         </div>

@@ -15,9 +15,9 @@ const Products = () => {
         <>
             <div className='container-fluid'>
                 <div className='row d-flex justify-content-evenly'>
-                    <div className='col-md-8'>
-                        <div className="container-fluid mt-5">
-                            <div className="row row-cols-1 row-cols-md-3 g-4">
+                    <div className='col-md-12'>
+                        <div className=" container-fluid mt-5 mb-5">
+                            <div className="row row-cols-1 row-cols-md-4 g-4">
                                 {products && products.map((product, i) => (
                                     <Card key={i} data={product} />
                                 ))}
