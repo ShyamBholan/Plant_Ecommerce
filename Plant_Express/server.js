@@ -5,6 +5,9 @@ const morgan=require('morgan')
 require('./db/connection')
 const bodyParser=require('body-parser')
 const cors=require('cors')
+app.use(cors({
+    origin:'http://localhost:3000'
+}))
 
 const categoryRoute=require('./routes/categoryRoute')
 const productRoute=require('./routes/productRoute')
