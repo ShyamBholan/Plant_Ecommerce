@@ -8,6 +8,7 @@ import Homepage from './pages/Homepage'
 import AboutUs from './pages/AboutUs'
 import Cart from './pages/Cart'
 import Products from './pages/Products'
+import ProductDetails from './pages/ProductDetails'
 
 const MyRoute = () => {
   return (
@@ -21,6 +22,7 @@ const MyRoute = () => {
             <Route path='login' element={<Login/>}/>
             <Route path='signup' element={<Signup/>}/>
             <Route path='products' element={<Products/>}/>
+            <Route path='productdetails/:productId' element={<ProductDetails/>}/>
             </Route>
             <Route path='*' element={<NotFound/>}/>
         </Routes>
