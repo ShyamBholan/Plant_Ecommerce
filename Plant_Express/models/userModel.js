@@ -59,4 +59,22 @@ userSchema.methods={
     }
 }
 
+//defining methods
+userSchema.methods={
+    encryptPasssword:function(password){
+        if(!password) return ''
+        try{
+            return crypto
+            .Hmac('sha1',this.salt)
+            .update(password)
+            .digest('hex')
+        }
+        catch(err){
+            return err
+        }
+    },
+    authenticate:function(plainText){
+        return this.encryptPasssword(plainText)===this.hashed_password
+    }
+}
 module.exports=mongoose.model('User',userSchema)
