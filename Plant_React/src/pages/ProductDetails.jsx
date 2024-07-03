@@ -16,35 +16,13 @@ const ProductDetails = () => {
             .catch(err => console.log(err))
     }, [])
 
-    // add to cart 
-    const addToCart = () => {
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || []
-        const productItem = {
-            id: product._id,
-            name: product.product_name,
-            price: product.product_price,
-            image: product.product_image,
-            category: product.category,
-            description: product.product_description,
-            countInStock: product.countInStock,
-            quantity: 1
-        }
-        const existingItem = cartItems.find(item => item.id === product._id)
-        if (existingItem) {
-            toast.error('Product already in the cart')
-        }
-        else {
-            cartItems.push(productItem)
-            localStorage.setItem('cartItems', JSON.stringify(cartItems))
-            toast.success(`${productItem.name} is added to cart`)
-        }
-    }
     return (
         <>
             <div className='container shadow p-5 my-5'>
                 <div className='row d-flex justify-content-between'>
                     <div className='col-md-5'>
-                        <img src={`${IMG_URL}/${product.product_image}`} alt={product.product_name} className='img-fluid' />
+                        <img src={`${IMG_URL}/${product.product_image}`} alt={product.product_name} className='img-thumbnail img-fluid'
+                            style={{ maxHeight: '400px' }} />
                     </div>
                     <div className='col-md-6'>
                         <h5>{product.product_name}</h5>
@@ -52,7 +30,7 @@ const ProductDetails = () => {
                         <p>{product.product_description}</p>
                         <br />
                         <br />
-                        <button className='btn btn-success' onClick={addToCart}>Add to Cart</button>
+                        <button className='btn btn-success' >Add to Cart</button>
                     </div>
                 </div>
             </div>

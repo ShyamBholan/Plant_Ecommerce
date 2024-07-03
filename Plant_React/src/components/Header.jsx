@@ -5,7 +5,7 @@ const Header = () => {
     <>
       <header className='d-flex justify-content-between align-items-center bg-light border-bottom border-shadow-secondary'>
         <Link to={"/"} className="d-flex flex-wrap align-items-center justify-content-center m-2" >
-          <img src="logo.png" width="180px" height="55px" alt='logo'/>
+          <img src="logo.png" alt="logo" class="img-fluid" style={{ maxWidth: "180px", height: "55px" }} />
         </Link>
         <ul className="nav col-12 col-md-auto mx-5 px-3 justify-content-center text-dark mb-md-0">
           <li><Link to="/" className="nav-link p-3 link-dark ">Home</Link></li>
@@ -17,7 +17,7 @@ const Header = () => {
         </ul>
 
         <div className="input-group mx-5">
-          <input type="text" className="form-control" placeholder="Search"/>
+          <input type="text" className="form-control" placeholder="Search" />
           <button className="btn btn-outline-secondary" type="button" id="button"><i className="fas fa-search"></i></button>
         </div>
 
