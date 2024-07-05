@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="row justify-content-space mt-3">
           <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <a className="d-flex flex-wrap align-items-center justify-content-center m-2">
-              <img src="logo.png" alt="Mero Plants Logo" width="180px" height="55px" />
+              <img src="logo.png" className='img-fluid' alt="Mero Plants Logo" />
             </a>
             <p>
               At Mero Plants, we're passionate about green living. Our mission is to provide premium quality indoor and outdoor plants, enhancing your living spaces with natural beauty.

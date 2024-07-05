@@ -18,7 +18,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="container-fluid mb-5 d-flex align-items-center ">
-          <img src="background.png" alt="eyes" height="400px" />
+          <img src="background.png" className='img-fluid' alt="plant"/>
         </div>
       </div>
     </>
