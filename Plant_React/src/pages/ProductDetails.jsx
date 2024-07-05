@@ -14,7 +14,7 @@ const ProductDetails = () => {
                 setProduct(res.data)
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [params.productId])
 
     return (
         <>

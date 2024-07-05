@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="row justify-content-space mt-3">
           <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <a className="d-flex flex-wrap align-items-center justify-content-center m-2">
-              <img src="logo.png" className='img-fluid' alt="Mero Plants Logo" />
+              <img src="images/logo.png" className='img-fluid' alt="Mero Plants Logo" />
             </a>
             <p>
               At Mero Plants, we're passionate about green living. Our mission is to provide premium quality indoor and outdoor plants, enhancing your living spaces with natural beauty.
@@ -49,18 +49,18 @@ const Footer = () => {
 
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-            <p><Link to="#" className="text-reset text-decoration-none">Money Plant</Link></p>
-            <p><Link to="#" className="text-reset text-decoration-none">Lucky Bamboo</Link></p>
-            <p><Link to="#" className="text-reset text-decoration-none">Peace Lily</Link></p>
-            <p><Link to="#" className="text-reset text-decoration-none">Snake Plant</Link></p>
+            <p className="text-reset text-decoration-none">Money Plant</p>
+            <p className="text-reset text-decoration-none">Lucky Bamboo</p>
+            <p className="text-reset text-decoration-none">Peace Lily</p>
+            <p className="text-reset text-decoration-none">Snake Plant</p>
           </div>
 
           <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
-            <p><Link to="#" className="text-reset text-decoration-none">Services</Link></p>
-            <p><Link to="#" className="text-reset text-decoration-none">Products</Link></p>
-            <p><Link to="#" className="text-reset text-decoration-none">Orders</Link></p>
-            <p><Link to="#" className="text-reset text-decoration-none">Help</Link></p>
+            <p><Link to="/services" className="text-reset text-decoration-none">Services</Link></p>
+            <p><Link to="/products" className="text-reset text-decoration-none">Products</Link></p>
+            <p><Link to="/orders" className="text-reset text-decoration-none">Orders</Link></p>
+            <p><Link to="/aboutus" className="text-reset text-decoration-none">Help</Link></p>
           </div>
 
           <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -72,6 +72,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
       <div className="text-center text-dark border-top border-shadow-secondary bg-light p-4">
         © {currentYear} Copyright:
         <Link className="text-reset text-decoration-none fw-bold" to="/">Mero Plants</Link>
