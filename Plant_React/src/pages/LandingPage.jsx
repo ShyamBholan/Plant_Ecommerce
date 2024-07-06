@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const LandingPage = () => {
   return (
     <>
-      <div className="conatiner d-flex p-2 m-5 bg-light">
+      <div className="conatiner d-flex p-2 m-5">
         <div class="container-fluid justify-content-center allign-items-center">
           <div class="row">
             <div className="p-2 my-3">

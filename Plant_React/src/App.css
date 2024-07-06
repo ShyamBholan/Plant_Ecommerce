@@ -6,3 +6,8 @@
     height: 500px;
     object-fit: fill;
   }
+  .nav-link:hover{
+    text-decoration: underline;
+    color: green;
+  }
+ 

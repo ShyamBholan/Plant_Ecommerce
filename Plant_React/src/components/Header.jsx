@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <>
-      <header className='container-fluid d-flex flex-wrap align-items-center justify-content-between align-items-center bg-light border-bottom border-shadow-secondary'>
+      <header className='container-fluid d-flex flex-wrap align-items-center justify-content-between border-bottom border-shadow-secondary'>
         <Link to={"/"} className="d-flex flex-wrap align-items-center justify-content-center" >
           <img src="images/logo.png" alt="logo" className='img-fluid' style={{ maxHeight: '50px', maxWidth: '220px' }} />
         </Link>
