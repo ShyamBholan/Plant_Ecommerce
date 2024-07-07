@@ -1,56 +1,85 @@
-import React from 'react'
+import React, { useState, useEffect,Fragment } from 'react'
+import { IMG_URL } from '../config'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = () => {
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        const cartData = localStorage.getItem('cartItems')
+        const cartItems = JSON.parse(cartData)
+        if (cartItems && cartItems.length > 0) {
+            setProducts(cartItems)
+        }
+        else {
+            setProducts([])
+        }
+    }, [])
+
+      //remove from cart 
+      const removeCartHandler = (id, name) => {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems'))
+        const filterCart = cartItems.filter(item => item.id !== id)
+        localStorage.setItem('cartItems', JSON.stringify(filterCart))
+        setProducts(filterCart)
+        toast.success(`${name} is removed from the cart`)
+    }
+
     return (
         <>
+        <ToastContainer theme='colored' position='top-center' />
             <div className="container">
                 <div className="row d-flex justify-content-between my-5">
-                    {/* {products && products.length === 0 ?
+                    {products && products.length === 0 ?
                         <h2 className="text-center text-danger mt-3">Your Cart is Empty</h2>
-                    :(
-                    <> */}
-                        
-                        <div className="col-md-8 shadow-lg">
-                        <h2 className='text-center mt-2'>Your Cart Items</h2>
-                        <hr />
-                            <div className="d-flex p-3 align-items-center">
-                                <div className="col-3">
-                                    <img src="/images/peacelily.png" className='img-fluid' alt="plant images" />
+                        : (
+                            <>
+                                <div className="col-md-8 shadow-lg">
+                                    <h2 className='text-center mt-2'>Your Cart Items</h2>
+                                    <hr />
+                                    {products && products.map((item, i) => (
+                                        <Fragment key={i}>
+                                            <div className="d-flex p-3 align-items-center">
+                                            <div className="col-3">
+                                                <img src={`${IMG_URL}/${item.image}`} className='img-fluid' alt={item.name} width="150" />
+                                            </div>
+                                            <div className="col-3">
+                                                <span><b>{item.name}</b></span>
+                                            </div>
+                                            <div className="col-2">
+                                                <span>Rs.{item.price}</span>
+                                            </div>
+                                            <div className="col-3">
+                                                <div className="d-flex">
+                                                    <button className="btn btn-danger">-</button>&nbsp;
+                                                    <input type="number" name='qty' readOnly className='form-control text-center border-0' />
+                                                    &nbsp;
+                                                    <button className='btn btn-primary'>+</button>
+                                                </div>
+                                            </div>
+                                            &nbsp;&nbsp;
+                                            <div className="col-1">
+                                                <div className="btn btn-danger" onClick={() => removeCartHandler(item.id, item.name)}><i className="fa fa-trash"></i></div>
+                                            </div>
+                                        </div>
+                                        </Fragment>
+                                    ))}
                                 </div>
-                                <div className="col-3">
-                                    <span><b>Peacelily</b></span>
-                                </div>
-                                <div className="col-2">
-                                    <span>Rs.400</span>
-                                </div>
-                                <div className="col-3">
-                                    <div className="d-flex">
-                                        <button className="btn btn-danger">-</button>&nbsp;
-                                        <input type="number" name='qty' readOnly className='form-control text-center border-0' />
-                                        &nbsp;
-                                        <button className='btn btn-primary'>+</button>
+                                <div className="col-md-3">
+                                    <div className="shadow-lg p-2">
+                                        <h4>Cart Summary</h4>
+                                        <hr />
+                                        <span><b>Units:</b></span>
+                                        <br />
+                                        <span><b>Total:</b></span>
+                                        <hr />
+                                        <button className='btn btn-success'>check Out</button>
                                     </div>
                                 </div>
-                                &nbsp;&nbsp;
-                                <div className="col-1">
-                                    <div className="btn btn-danger"><i className="fa fa-trash"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="shadow-lg p-2">
-                                <h4>Cart Summary</h4>
-                                <hr />
-                                <span><b>Units:</b></span>
-                                <br />
-                                <span><b>Total:</b></span>
-                                <hr />
-                                <button className='btn btn-success'>check Out</button>
-                            </div>
-                        </div>
-                    {/* </>
-                    )
-                } */}
+                            </>
+                        )
+                    }
                 </div>
             </div>
 
