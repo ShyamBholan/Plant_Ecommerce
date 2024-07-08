@@ -2,6 +2,7 @@ import React, { useState, useEffect,Fragment } from 'react'
 import { IMG_URL } from '../config'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { Navigate } from 'react-router-dom';
 
 const Cart = () => {
     const [products, setProducts] = useState([])
@@ -17,6 +18,30 @@ const Cart = () => {
         }
     }, [])
 
+    //decrease quantity
+    const decreaseQuantity=id=>{
+        const updateProducts=products.map(item=>{
+            if(item.id===id && item.quantity>1){
+                return {...item,quantity:item.quantity-1}
+            }
+            return item
+        })
+        setProducts(updateProducts)
+        localStorage.setItem('cartItems',JSON.stringify(updateProducts))
+    }
+
+    //increase quantity
+    const increaseQuantity=id=>{
+        const updateProducts=products.map(item=>{
+            if(item.id===id && item.quantity<item.countInStock){
+                return {...item,quantity:item.quantity+1}
+            }
+            return item
+        })
+        setProducts(updateProducts)
+        localStorage.setItem('cartItems',JSON.stringify(updateProducts))
+    }
+
       //remove from cart 
       const removeCartHandler = (id, name) => {
         const cartItems = JSON.parse(localStorage.getItem('cartItems'))
@@ -26,6 +51,10 @@ const Cart = () => {
         toast.success(`${name} is removed from the cart`)
     }
 
+    //shipping
+    const shippingHandler=()=>{
+        Navigate('/shipping')
+    }
     return (
         <>
         <ToastContainer theme='colored' position='top-center' />
@@ -52,10 +81,10 @@ const Cart = () => {
                                             </div>
                                             <div className="col-3">
                                                 <div className="d-flex">
-                                                    <button className="btn btn-danger">-</button>&nbsp;
-                                                    <input type="number" name='qty' readOnly className='form-control text-center border-0' />
+                                                    <button className="btn btn-danger" onClick={()=>decreaseQuantity(item.id)}>-</button>&nbsp;
+                                                    <input type="number" name='qty' value={item.quantity} readOnly className='form-control text-center border-0' />
                                                     &nbsp;
-                                                    <button className='btn btn-primary'>+</button>
+                                                    <button className='btn btn-primary' onClick={()=>increaseQuantity(item.id)}>+</button>
                                                 </div>
                                             </div>
                                             &nbsp;&nbsp;
@@ -70,11 +99,11 @@ const Cart = () => {
                                     <div className="shadow-lg p-2">
                                         <h4>Cart Summary</h4>
                                         <hr />
-                                        <span><b>Units:</b></span>
+                                        <span><b>Units:</b>{products.reduce((acc,item)=>(acc+Number(item.quantity)),0)}</span>
                                         <br />
-                                        <span><b>Total:</b></span>
+                                        <span><b>Total:</b>{products.reduce((acc,item)=>(acc+item.quantity*item.price),0)}</span>
                                         <hr />
-                                        <button className='btn btn-success'>check Out</button>
+                                        <button className='btn btn-success' onClick={shippingHandler}>check Out</button>
                                     </div>
                                 </div>
                             </>
