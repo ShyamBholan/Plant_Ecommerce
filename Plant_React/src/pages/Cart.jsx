@@ -53,7 +53,7 @@ const Cart = () => {
 
     //shipping
     const shippingHandler=()=>{
-        Navigate('/shipping')
+        // Navigate('/shipping')
     }
     return (
         <>
