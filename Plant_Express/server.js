@@ -15,9 +15,8 @@ const userRoute=require('./routes/userRoute')
 
 //middleware
 app.use(morgan('dev'))
-app.use(bodyParser.json())
-
 //to read json data
+app.use(bodyParser.json())
 app.use('/public/uploads',express.static('public/uploads'))
 
 //routes
