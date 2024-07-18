@@ -1,5 +1,5 @@
 const { promises } = require('nodemailer/lib/xoauth2')
-const OrderItem=require('../models/order-itemModel')
+const OrderItem=require('../models/orderItemsModel')
 const Order=require('../models/orderModel')
 
 //post order
