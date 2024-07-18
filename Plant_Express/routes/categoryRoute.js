@@ -12,5 +12,4 @@ router.get('/categorydetails/:id',categoryDetails)
 router.put('/updatecategory/:id',requireSignin,requireAdmin,categoryValidation,Validation,updateCategory)
 router.delete('/deletecategory/:id',requireSignin,requireAdmin,deleteCategory)
 
-
 module.exports=router
