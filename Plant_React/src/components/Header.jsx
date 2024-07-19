@@ -20,7 +20,7 @@ const Header = () => {
           <button className="btn btn-outline-secondary" type="button" id="button"><i className="fas fa-search"></i></button>
         </form>
         <div className=" col-md-2 text-end ">
-          <Link to="/login" className="btn btn-success me-3" role="button">Login</Link>
+          <Link to="/signin" className="btn btn-success me-3" role="button">Login</Link>
           <Link to="/signup" className="btn btn-success me-3" role="button">Sign Up</Link>
         </div>
       </header>
