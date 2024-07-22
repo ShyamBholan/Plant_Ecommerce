@@ -6,16 +6,15 @@ import { Navigate } from 'react-router-dom'
 import { isAuthenticated } from '.'
 
 const PrivateRoute = () => {
-  isAuthenticated() && isAuthenticated().user.role===0?
-
+  isAuthenticated() && isAuthenticated().user.role === 0 ?
     <>
-    <Header/>
-    <Outlet/>
-    <Footer/>
+      <Header />
+      <Outlet />
+      <Footer />
     </>
-  :(
-    <Navigate to='/signin'/>
-  )
+    : (
+      <Navigate to='/signin' />
+    )
 }
 
 export default PrivateRoute
