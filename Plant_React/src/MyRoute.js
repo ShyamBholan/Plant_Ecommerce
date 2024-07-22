@@ -13,6 +13,8 @@ import Shipping from './pages/Shipping'
 import PrivateRoute from './auth/PrivateRoute'
 import EmailVerify from './auth/EmailVerify'
 import Profile from './pages/Profile'
+import ConfirmOrder from './pages/ConfirmOrder'
+import PaymentElement from './pages/PaymentElement'
 
 const MyRoute = () => {
   return (
@@ -29,9 +31,13 @@ const MyRoute = () => {
             <Route path='productdetails/:productId' element={<ProductDetails />} />
             <Route path='email/confirmation/:token' element={<EmailVerify/>}/>
           </Route>
+
+          {/* PrivateRoute */}
           <Route path='/' element={<PrivateRoute/>}>
+          <Route path='profile' element={<Profile/>}/>
             <Route path='shipping' element={<Shipping />} />
-            <Route path='profile' element={<Profile/>}/>
+            <Route path='confirm' element={<ConfirmOrder/>}/>
+            <Route path='payment' element={<PaymentElement/>}/>
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>
