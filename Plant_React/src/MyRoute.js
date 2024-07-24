@@ -14,6 +14,13 @@ import PrivateRoute from './auth/PrivateRoute'
 import EmailVerify from './auth/EmailVerify'
 import Profile from './pages/Profile'
 import ConfirmOrder from './pages/ConfirmOrder'
+import AdminRoute from './auth/AdminRoute'
+import Dashboard from './admin/Dashboard'
+import Addcategory from './admin/Addcategory'
+import Category from './admin/Category'
+import AddProduct from './admin/AddProduct'
+import Product from './admin/Product'
+import UpdateProduct from './admin/UpdateProduct'
 
 const MyRoute = () => {
   return (
@@ -36,6 +43,15 @@ const MyRoute = () => {
           <Route path='profile' element={<Profile/>}/>
             <Route path='shipping' element={<Shipping />} />
             <Route path='confirm' element={<ConfirmOrder/>}/>
+          </Route>
+          {/* admin route */}
+          <Route path='admin/' element={<AdminRoute/>}>
+            <Route path='dashboard' element={<Dashboard/>}/>
+            <Route path='addcategory' element={<Addcategory/>} />
+            <Route path='category' element={<Category/>} />
+            <Route path='addproduct' element={<AddProduct/>} />
+            <Route path='product' element={<Product/>} />
+            <Route path='updateproduct/:productId' element={<UpdateProduct/>} />
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>

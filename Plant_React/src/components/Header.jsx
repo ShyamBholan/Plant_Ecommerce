@@ -13,10 +13,10 @@ const Header = () => {
           <li><Link to="/services" className="nav-link p-3 link-dark">Services</Link></li>
           <li><Link to="/products" className="nav-link p-3 link-dark">Products</Link></li>
           <li><Link to="/help" className="nav-link p-3 link-dark">Help</Link></li>
-          <li><Link to="/cart" className="nav-link p-3 link-dark"><i class="fa fa-cart-plus"></i></Link></li>
+          <li><Link to="/cart" className="nav-link p-3 link-dark"><i className="fa fa-cart-plus"></i></Link></li>
         </ul>
-        <form class="col-12 d-flex col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search" />
+        <form className="col-12 d-flex col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" className="form-control form-control-dark" placeholder="Search..." aria-label="Search" />
           <button className="btn btn-outline-secondary" type="button" id="button"><i className="fas fa-search"></i></button>
         </form>
         <div className=" col-md-2 text-end ">

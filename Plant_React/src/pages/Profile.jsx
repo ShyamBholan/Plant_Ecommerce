@@ -8,7 +8,6 @@ const Profile = () => {
       <div className="container">
         <h1></h1>
         <h2 className='bg-danger'>Welcome {user.name}</h2>
-        <p>hello</p>
       </div>
 
 
