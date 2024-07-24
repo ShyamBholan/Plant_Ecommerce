@@ -6,8 +6,7 @@ const Profile = () => {
   return (
     <>
       <div className="container">
-        <h1></h1>
-        <h2 className='bg-danger'>Welcome {user.name}</h2>
+        <h2>Welcome {user.name}</h2>
       </div>
 
 

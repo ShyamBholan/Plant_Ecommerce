@@ -13,7 +13,7 @@ const AdminSidebar = () => {
                         aria-controls="offcanvasRight">
                         Menu
                     </button>
-                    <div className="offcanvas offcanvas-end bg-dark text-white" tabIndex="-1" id="offcanvasRight"
+                    <div className="offcanvas offcanvas-end bg-light text-dark" tabIndex="-1" id="offcanvasRight"
                         aria-labelledby="offcanvasRightLabel" style={{ width: '300px' }}>
                         <div className="offcanvas-header">
                             <h5 id="offcanvasRightLabel">Admin Dashboard</h5>
@@ -21,22 +21,22 @@ const AdminSidebar = () => {
                         </div>
                         <div className="offcanvas-body">
                             <ul className="list-unstyled">
-                                <li><Link to="/admin/dashboard" className="text-decoration-none text-white">Dashboard</Link></li>
-                                <li><Link to="#" className="text-decoration-none text-white">Users</Link></li>
-                                <li><Link to="/admin/product" className="text-decoration-none text-white">Products</Link></li>
-                                <li><Link to="/admin/category" className="text-decoration-none text-white">Categories</Link></li>
-                                <li><Link to="#" className="text-decoration-none text-white">Orders</Link></li>
-                                <li><Link to="/" className="text-decoration-none text-white">Go to Homepage</Link></li>
-                                <li><Link to="/admin/addcategory" className="text-decoration-none text-white">Add Category</Link></li>
-                                <li><Link to="/admin/addproduct" className="text-decoration-none text-white">Add Product</Link></li>
+                                <li><Link to="/admin/dashboard" className="text-decoration-none text-dark">Dashboard</Link></li>
+                                <li><Link to="user" className="text-decoration-none text-dark">Users</Link></li>
+                                <li><Link to="/admin/product" className="text-decoration-none text-dark">Products</Link></li>
+                                <li><Link to="/admin/category" className="text-decoration-none text-dark">Categories</Link></li>
+                                <li><Link to="orders" className="text-decoration-none text-dark">Orders</Link></li>
+                                <li><Link to="/" className="text-decoration-none text-dark">Go to Homepage</Link></li>
+                                <li><Link to="/admin/addcategory" className="text-decoration-none text-dark">Add Category</Link></li>
+                                <li><Link to="/admin/addproduct" className="text-decoration-none text-dark">Add Product</Link></li>
                             </ul>
                         </div>
                         <div className="offcanvas-body">
                             <ul className="list-unstyled">
-                                <li><Link to="#" className="text-decoration-none text-white">
+                                <li><Link to="#" className="text-decoration-none text-dark">
                                     <b>Name : </b> {user.name}
                                 </Link></li>
-                                <li><Link to="#" className="text-decoration-none text-white">
+                                <li><Link to="#" className="text-decoration-none text-dark">
                                     <b>Email : </b> {user.email}
                                 </Link></li>
                             </ul>
