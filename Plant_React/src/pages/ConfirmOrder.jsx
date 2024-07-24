@@ -107,7 +107,7 @@ const ConfirmOrder = () => {
                         <p>TotalPrice: Rs.<span>{totalPrice}</span></p>
                         <hr/>
                         <button className='btn btn-warning'
-                        onClick={proceessToPayment}
+                        // onClick={proceessToPayment}
                         >
                             Proceed to Payment
                         </button>

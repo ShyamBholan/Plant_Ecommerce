@@ -14,7 +14,6 @@ import PrivateRoute from './auth/PrivateRoute'
 import EmailVerify from './auth/EmailVerify'
 import Profile from './pages/Profile'
 import ConfirmOrder from './pages/ConfirmOrder'
-import PaymentElement from './pages/PaymentElement'
 
 const MyRoute = () => {
   return (
@@ -37,7 +36,6 @@ const MyRoute = () => {
           <Route path='profile' element={<Profile/>}/>
             <Route path='shipping' element={<Shipping />} />
             <Route path='confirm' element={<ConfirmOrder/>}/>
-            <Route path='payment' element={<PaymentElement/>}/>
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>
