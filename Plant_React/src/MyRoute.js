@@ -21,6 +21,9 @@ import Category from './admin/Category'
 import AddProduct from './admin/AddProduct'
 import Product from './admin/Product'
 import UpdateProduct from './admin/UpdateProduct'
+import PaymentElement from './pages/PaymentElement'
+
+
 
 const MyRoute = () => {
   return (
@@ -43,6 +46,7 @@ const MyRoute = () => {
           <Route path='profile' element={<Profile/>}/>
             <Route path='shipping' element={<Shipping />} />
             <Route path='confirm' element={<ConfirmOrder/>}/>
+            <Route path='payment' element={<PaymentElement/>}/>
           </Route>
           {/* admin route */}
           <Route path='admin/' element={<AdminRoute/>}>

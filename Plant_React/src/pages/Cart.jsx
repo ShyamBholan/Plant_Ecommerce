@@ -2,7 +2,7 @@ import React, { useState, useEffect,Fragment } from 'react'
 import { IMG_URL } from '../config'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
     const navigate=useNavigate()
@@ -54,7 +54,7 @@ const Cart = () => {
 
     //shipping
     const shippingHandler=()=>{
-        // navigate('/shipping')
+        navigate('/shipping')
     }
     return (
         <>
