@@ -189,7 +189,7 @@ exports.userDetails = async (req, res) => {
 //signout
 exports.signOut=(req,res)=>{
     res.clearCookie('myCookie')
-    res.jon({message:'signout success'})
+    res.json({message:'signout success'})
 }
 
 //require signin

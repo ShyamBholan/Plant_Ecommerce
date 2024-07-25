@@ -13,7 +13,7 @@ exports.productValidation = [
     check('product_price', 'price is required').notEmpty().isNumeric().withMessage('price must be numeric value'),
     check('countInStock', 'stock is required').notEmpty().isNumeric().withMessage('stock number must be numeric value'),
     check('product_description', 'product_description is required').notEmpty().isLength({ min: 20 }).withMessage('description must be of 20 characters and more'),
-    check('product_rating', 'Product rating is required and must be between 0 and 5').notEmpty().isFloat({ min: 0, max: 5 }).withMessage('Rating must be between 0 and 5'),
+    // check('product_rating', 'Product rating is required and must be between 0 and 5').notEmpty().isFloat({ min: 0, max: 5 }).withMessage('Rating must be between 0 and 5'),
     check('category', 'category is required').notEmpty()
 ]
 
