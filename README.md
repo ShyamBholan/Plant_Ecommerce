@@ -30,7 +30,7 @@ A modern e-commerce web application for buying plants online. This React-based p
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/plant-ecommerce.git
+git clone https://github.com/ShyamBholan/Plant_Ecommerce
 cd plant-ecommerce
 npm install
 ```
@@ -54,26 +54,34 @@ To enable Stripe payments, make sure to:
 
 ## 🗃️ MongoDB Integration
 
-This project uses **MongoDB Atlas** for storing data like users, products, and orders.
+This project uses **MongoDB Atlas** for storing data such as users, products, and orders.
 
 ### MongoDB Setup
 
-1. Go to [MongoDB Atlas](https://cloud.mongodb.com/v2/66725ba949d2c7696062183d#/overview) and create a cluster.
-2. Create a database and collection (e.g., `plants`, `orders`, `users`).
-3. In your backend project (Node.js/Express recommended), connect using the MongoDB URI:
+1. Go to [MongoDB Atlas](https://www.mongodb.com/) and create a cluster.
+2. Create your database and collections (e.g., `plants`, `orders`, `users`).
+3. Use the following code in your backend to connect using `mongoose`:
 
 ```js
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-mongoose.connect("your-mongodb-connection-uri", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log("MongoDB connected"))
-.catch((err) => console.error("MongoDB connection error:", err));
+mongoose.connect(process.env.DATABASE)
+  .then(() => console.log('database connected'))
+  .catch(err => console.log(err));
 ```
 
-4. Replace `"your-mongodb-connection-uri"` with the actual URI from MongoDB Atlas.
+4. In your `.env` file, store the MongoDB connection URI:
+
+```
+DATABASE=mongodb+srv://<username>:<password>@cluster0.mongodb.net/plantEcommerce?retryWrites=true&w=majority
+```
+
+5. Install the required dependencies if not already:
+
+```bash
+npm install mongoose dotenv
+```
 
 ## 🌐 Browser Support
 
@@ -117,8 +125,4 @@ npm test
 
 ## 🧑‍💻 Author
 
-- **Your Name** – [@yourgithub](https://github.com/yourgithub)
-
-## 📄 License
-
-This project is licensed under the MIT License.
+- **Your Name** – [@ShyamBholan](https://github.com/ShyamBholan)
