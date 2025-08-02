@@ -93,8 +93,5 @@ npm test
 
 ## 🧑‍💻 Author
 
-- **Your Name** – [@yourgithub](https://github.com/yourgithub)
+- **Your Name** – [@ShyamBholan](https://github.com/ShyamBholan)
 
-## 📄 License
-
-This project is licensed under the MIT License.
